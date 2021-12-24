@@ -1,0 +1,171 @@
+/*
+  elm-hot creates an additional div wrapper around the app to make HMR possible.
+  This could break styling in development mode if you are using Elm UI.
+
+  More context in the issue:
+    https://github.com/halfzebra/create-elm-app/issues/320
+*/
+[data-elm-hot="true"] {
+  height: inherit;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Trebuchet MS', 'Lucida Grande', 'Bitstream Vera Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  color: #293c4b;
+  background-color: #293c4b;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+img {
+  margin: 20px 0;
+  max-width: 200px;
+}
+
+.container{
+  width:500px;
+  max-width:500px;
+  display: flex;
+  flex-direction: column;
+  margin:20px auto;
+  gap: 10px;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: 'flex-start';
+  gap: 10px;
+}
+
+
+.dropdown-custom{
+  border-radius: 8px !important;
+  background-color: white;
+  padding: 0px;
+  color: black;
+  position: relative;
+  display: flex;
+  align-self: flex-start;
+  cursor: pointer;
+  outline: none;
+  min-width: 500px;
+  max-width: 500px;
+  justify-content: space-between;
+  min-height: 50px;
+  flex-grow: 0;
+}
+
+.dropdown-custom:hover, .dropdown-custom:focus{
+  background-color: white;
+}
+
+.list-items{
+  margin-top: 52px;
+  background-color: white;
+  position: absolute;
+  box-shadow: 5px;
+  right: 0;
+  min-width: 500px;
+  border-radius: 5px;
+  z-index: 2;
+  max-height: 300px;
+  overflow-y: scroll;
+  color: black;
+  background-color: gray;
+  max-width: 100%;
+}
+
+.list-item{
+  padding:20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap:30px;
+  align-items: center;
+  background-color: white;
+  margin: 1px 0;
+}
+
+.list-item:hover{
+  background-color: #F0F0F0;
+}
+
+.top-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 7px;
+  align-items: center;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 0;
+  overflow: hidden;
+}
+
+.display-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 0;
+  overflow: hidden;
+  width: calc(100% - 30px)
+}
+
+.display-text2 {
+  display: inline-block;
+  /* flex-shrink: 1; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* flex-grow: 0; */
+  overflow: hidden;
+  /* width: calc(100% - 200px) */
+  width: 100%;
+}
+
+.selected {
+  color: #4169E1;
+}
+.add-item{
+  padding:20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  gap:30px;
+  color: #0B0080;
+  font-size: 17px;
+}
+.item {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap:10px;
+  display:flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 80%;
+}
+.item-container{
+  flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    display: flex;
+    width: 100%;
+    gap: 25px;
+}
+.edit-item{
+  color:black;
+}
+.desc{
+  color: #36454F;
+}
+
+.icon-spacer {
+  min-width: 16px;
+}
