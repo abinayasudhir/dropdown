@@ -85,6 +85,9 @@ update msg model =
 
         HandleKeyboardEvent { keyCode } ->
             let
+                _ =
+                    Debug.log "keyCode" keyCode
+
                 newModel =
                     if keyCode == Escape then
                         { model | state = Closed }

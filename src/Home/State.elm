@@ -62,6 +62,13 @@ init =
                 , { label = "this is the 30th percentile this is the 30th percentile this is the 30th percentile", description = Just "this is the 30th percentile", value = "Option 10" }
                 ]
                 (Just "Optimistic")
+      , dropDown5 =
+            DD.init
+                [ { label = "Male", description = Just "This is the worst case scenario", value = Male }
+                , { label = "Female", description = Just "This is the 30th percentile(0 - most pessimistic/ 100 - most optimistic", value = Female }
+                , { label = "Non Binary", description = Just "This is the 50th percentile(0 - most pessimistic / 100 - most optimistic", value = NonBinary }
+                ]
+                Nothing
       }
     , Cmd.none
     )
@@ -81,6 +88,13 @@ update msg model =
             let
                 _ =
                     Debug.log "EditItem called with" item
+            in
+            ( model, Cmd.none )
+
+        EditGender item ->
+            let
+                _ =
+                    Debug.log "EditGender called with" item
             in
             ( model, Cmd.none )
 
@@ -118,4 +132,13 @@ update msg model =
             in
             ( { model | dropDown4 = newModel }
             , Cmd.map DD4 newCmd
+            )
+
+        DD5 ddMsg ->
+            let
+                ( newModel, newCmd ) =
+                    DD.update ddMsg model.dropDown5
+            in
+            ( { model | dropDown5 = newModel }
+            , Cmd.map DD5 newCmd
             )
